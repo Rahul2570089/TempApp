@@ -1,0 +1,34 @@
+const express=require("express");
+const body_parser=require('body-parser');
+const userRouter=require("./routers/user_router");
+const todoRouter=require("./routers/todo_router");
+const profileRouter=require("./routers/profile_router");
+const professionRouter=require("./routers/add_profession_router");
+const JobRouter=require("./routers/add_job_router");
+const JobTypeRouter=require("./routers/add_job_type_router");
+const RecruiterProfileRouter=require("./routers/add_recruiter_profile_router");
+const RecruiterProfileFinalRouter=require("./routers/add_recruiter_profile_final_router");
+const NewJobPostRouter=require("./routers/add_new_job_post_router");
+const JobMatchingSeekerRouter=require("./routers/job_matching_seeker_router");
+const RequestSendRouter=require("./routers/request_send_router");
+const GetAllRequestsRouter=require("./routers/get_all_requests_router");
+const AddReviewRouter=require("./routers/add_review_router");
+const app=express();
+
+app.use(body_parser.json());
+
+app.use('/',userRouter);
+//app.use('/',todoRouter);
+app.use('/',profileRouter);
+app.use('/',JobRouter);
+app.use('/',JobTypeRouter);
+app.use('/',RecruiterProfileRouter);
+app.use('/',RecruiterProfileFinalRouter);
+app.use('/',NewJobPostRouter);
+app.use('/',JobMatchingSeekerRouter);
+app.use('/',RequestSendRouter);
+app.use('/',GetAllRequestsRouter);
+app.use('/',AddReviewRouter);
+//app.use('/',professionRouter);
+//app.use('/',MinRateRouter);
+module.exports=app;
