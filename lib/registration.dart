@@ -50,7 +50,7 @@ class _RegistrationScreenState extends State< RegistrationScreen> {
  if(emailController.text.isNotEmpty && passwordController.text.isNotEmpty && nameController.text.isNotEmpty)
 {
    var regBody={
-     "name":nameController.text.isNotEmpty,
+     "name":nameController.text,
      "email":emailController.text,
      "password":passwordController.text
    };
